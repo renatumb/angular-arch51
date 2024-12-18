@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!--
+<?xml version="1.0" encoding="UTF-8" ?><!--
  |  Copyright 2020 Adobe Systems Incorporated
  |
  |  Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +15,6 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <!-- ====================================================================== -->
     <!-- P A R E N T  P R O J E C T  D E S C R I P T I O N                      -->
     <!-- ====================================================================== -->
@@ -26,15 +24,12 @@
         <version>1.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-
     <!-- ====================================================================== -->
     <!-- P R O J E C T  D E S C R I P T I O N                                   -->
     <!-- ====================================================================== -->
     <artifactId>angular-arch51.ui.frontend</artifactId>
     <packaging>pom</packaging>
     <name>angular-arch51 - UI Frontend</name>
-
-
     <!-- ====================================================================== -->
     <!-- B U I L D   D E F I N I T I O N                                        -->
     <!-- ====================================================================== -->
@@ -95,12 +90,9 @@
             </plugin>
         </plugins>
     </build>
-    
-    
     <profiles>
         <profile>
             <id>serverSideRender-runtime</id>
-            
             <build>
                 <pluginManagement>
                     <plugins>
@@ -143,14 +135,12 @@
                                     <phase>install</phase>
                                     <configuration>
                                         <arguments>run deploy-ssr-ioruntime</arguments>
-                                        
                                         <environmentVariables>
                                             <AIO_RUNTIME_NAMESPACE>${aio.runtime.namespace}</AIO_RUNTIME_NAMESPACE>
                                             <AIO_RUNTIME_AUTH>${aio.runtime.auth}</AIO_RUNTIME_AUTH>
                                         </environmentVariables>
                                     </configuration>
                                 </execution>
-                            
                             </executions>
                         </plugin>
                     </plugins>

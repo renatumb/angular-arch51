@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
+<?xml version="1.0" encoding="UTF-8"?><!--
  |  Copyright 2020 Adobe Systems Incorporated
  |
  |  Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,44 +13,36 @@
  |  See the License for the specific language governing permissions and
  |  limitations under the License.
 -->
-
 <!--
  | DO NOT MODIFY
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>com.renatobonfim.aem</groupId>
         <artifactId>angular-arch51</artifactId>
         <version>1.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-
     <artifactId>angular-arch51.ui.tests.wdio</artifactId>
     <name>angular-arch51 - UI Tests</name>
     <packaging>pom</packaging>
     <description>UI Tests for angular-arch51</description>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <node.version>v18.14.2</node.version>
         <npm.version>9.5.0</npm.version>
-
         <HEADLESS_BROWSER>false</HEADLESS_BROWSER>
         <REPORTS_PATH>${project.basedir}/target/reports</REPORTS_PATH>
-
         <!-- AEMaaCS UI testing convention properties -->
         <AEM_AUTHOR_URL>http://localhost:4502</AEM_AUTHOR_URL>
         <AEM_AUTHOR_USERNAME>admin</AEM_AUTHOR_USERNAME>
         <AEM_AUTHOR_PASSWORD>admin</AEM_AUTHOR_PASSWORD>
-        <AEM_PUBLISH_URL />
+        <AEM_PUBLISH_URL/>
         <AEM_PUBLISH_USERNAME>admin</AEM_PUBLISH_USERNAME>
         <AEM_PUBLISH_PASSWORD>admin</AEM_PUBLISH_PASSWORD>
         <SELENIUM_BROWSER>chrome</SELENIUM_BROWSER>
     </properties>
-
     <build>
         <pluginManagement>
             <plugins>
@@ -101,7 +92,6 @@
             </plugin>
         </plugins>
     </build>
-
     <profiles>
         <profile>
             <id>ui-tests-check</id>
@@ -174,7 +164,7 @@
                                     <goal>npm</goal>
                                 </goals>
                                 <configuration>
-                                  <arguments>ci</arguments>
+                                    <arguments>ci</arguments>
                                 </configuration>
                             </execution>
                             <execution>
@@ -206,7 +196,6 @@
                 </plugins>
             </build>
         </profile>
-
         <profile>
             <id>ui-tests-docker-build</id>
             <activation>
@@ -220,44 +209,45 @@
                         <version>1.6.0</version>
                         <executions>
                             <execution>
-                            <id>docker-build</id>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>exec</goal>
-                            </goals>
-                            <configuration> 
-                                <executable>docker</executable>
-                                <workingDirectory>${project.basedir}</workingDirectory>
-                                <arguments>
-                                    <argument>build</argument>
-                                    <argument>-t</argument>
-                                    <argument>${project.groupId}-${project.artifactId}/ui.tests:${project.version}</argument>
-                                    <argument>.</argument>
-                                </arguments>
-                            </configuration>
+                                <id>docker-build</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>docker</executable>
+                                    <workingDirectory>${project.basedir}</workingDirectory>
+                                    <arguments>
+                                        <argument>build</argument>
+                                        <argument>-t</argument>
+                                        <argument>${project.groupId}-${project.artifactId}/ui.tests:${project.version}
+                                        </argument>
+                                        <argument>.</argument>
+                                    </arguments>
+                                </configuration>
                             </execution>
                             <execution>
-                            <id>docker-tag</id>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>exec</goal>
-                            </goals>
-                            <configuration> 
-                                <executable>docker</executable>
-                                <workingDirectory>${project.basedir}</workingDirectory>
-                                <arguments>
-                                    <argument>tag</argument>
-                                    <argument>${project.groupId}-${project.artifactId}/ui.tests:${project.version}</argument>
-                                    <argument>${project.groupId}-${project.artifactId}/ui.tests:latest</argument>
-                                </arguments>
-                            </configuration>
+                                <id>docker-tag</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>docker</executable>
+                                    <workingDirectory>${project.basedir}</workingDirectory>
+                                    <arguments>
+                                        <argument>tag</argument>
+                                        <argument>${project.groupId}-${project.artifactId}/ui.tests:${project.version}
+                                        </argument>
+                                        <argument>${project.groupId}-${project.artifactId}/ui.tests:latest</argument>
+                                    </arguments>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
                 </plugins>
             </build>
         </profile>
-
         <profile>
             <id>ui-tests-docker-execution</id>
             <activation>
@@ -294,7 +284,8 @@
                                     </environmentVariables>
                                     <arguments>
                                         <argument>-f</argument>
-                                        <argument>${project.basedir}/docker-compose-wdio-${SELENIUM_BROWSER}.yaml</argument>
+                                        <argument>${project.basedir}/docker-compose-wdio-${SELENIUM_BROWSER}.yaml
+                                        </argument>
                                         <argument>up</argument>
                                         <argument>--quiet-pull</argument>
                                         <argument>--abort-on-container-exit</argument>
@@ -313,7 +304,8 @@
                                     <workingDirectory>${project.basedir}</workingDirectory>
                                     <arguments>
                                         <argument>-f</argument>
-                                        <argument>${project.basedir}/docker-compose-wdio-${SELENIUM_BROWSER}.yaml</argument>
+                                        <argument>${project.basedir}/docker-compose-wdio-${SELENIUM_BROWSER}.yaml
+                                        </argument>
                                         <argument>down</argument>
                                         <argument>--remove-orphans</argument>
                                     </arguments>
@@ -325,5 +317,4 @@
             </build>
         </profile>
     </profiles>
-
 </project>
