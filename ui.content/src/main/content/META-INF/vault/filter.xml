@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/angular-arch51" mode="merge"/>
+    <filter root="/content/angular-arch51" mode="merge"/>
+    <filter root="/content/dam/angular-arch51" mode="merge">
+        <exclude pattern="/content/dam/angular-arch51(/.*)?"/>
+        <include pattern="/content/dam/angular-arch51/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/angular-arch51/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/angular-arch51" mode="merge"/>
+</workspaceFilter>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/angular-arch51/clientlibs"/>
+    <filter root="/apps/angular-arch51/components"/>
+    <filter root="/apps/angular-arch51/i18n"/>
+    <filter root="/apps/msm/angular-arch51_blueprint" mode="merge"/>
+</workspaceFilter>
