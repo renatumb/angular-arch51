@@ -45,7 +45,7 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <id>npm run test</id>
+                        <id>npm run test @REX front AA</id>
                         <phase>generate-resources</phase>
                         <goals>
                             <goal>npm</goal>
@@ -58,7 +58,7 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>npm run build</id>
+                        <id>npm run build @REX front BB</id>
                         <phase>generate-resources</phase>
                         <goals>
                             <goal>npm</goal>
@@ -68,6 +68,19 @@
                             <arguments>run build${build.environment}</arguments>
                         </configuration>
                     </execution>
+
+                    <execution>
+                        <id>npm version @REX front version</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <configuration>
+                            <!-- Create development/production build -->
+                            <arguments>version</arguments>
+                        </configuration>
+                    </execution>
+                    
                 </executions>
             </plugin>
             <plugin>
@@ -105,7 +118,7 @@
                             </configuration>
                             <executions>
                                 <execution>
-                                    <id>npm run test</id>
+                                    <id>npm run test @REX front CC</id>
                                     <phase>generate-resources</phase>
                                     <goals>
                                         <goal>npm</goal>
@@ -118,7 +131,7 @@
                                     </configuration>
                                 </execution>
                                 <execution>
-                                    <id>npm run build-serverless</id>
+                                    <id>npm run build-serverless @REX front DD </id>
                                     <phase>generate-resources</phase>
                                     <goals>
                                         <goal>npm</goal>
@@ -128,7 +141,7 @@
                                     </configuration>
                                 </execution>
                                 <execution>
-                                    <id>npm run deploy</id>
+                                    <id>npm run deploy @REX front EE</id>
                                     <goals>
                                         <goal>npm</goal>
                                     </goals>

@@ -43,7 +43,7 @@
         <vault.user>admin</vault.user>
         <vault.password>admin</vault.password>
         <frontend-maven-plugin.version>1.12.0</frontend-maven-plugin.version>
-        <core.wcm.components.version>2.26.0</core.wcm.components.version>
+        <core.wcm.components.version>2.23.0</core.wcm.components.version>
         <bnd.version>5.1.2</bnd.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -131,18 +131,28 @@
                     </configuration>
                     <executions>
                         <execution>
-                            <id>install node and npm</id>
+                            <id>install node and npm @REX main AA</id>
                             <goals>
                                 <goal>install-node-and-npm</goal>
                             </goals>
                         </execution>
                         <execution>
-                            <id>npm ci</id>
+                            <id>npm ci @REX main BB</id>
                             <goals>
                                 <goal>npm</goal>
                             </goals>
                             <configuration>
                                 <arguments>ci</arguments>
+                            </configuration>
+                        </execution>
+
+                        <execution>
+                            <id>npm version @REX main VERSION</id>
+                            <goals>
+                                <goal>npm</goal>
+                            </goals>
+                            <configuration>
+                                <arguments>version</arguments>
                             </configuration>
                         </execution>
                     </executions>
