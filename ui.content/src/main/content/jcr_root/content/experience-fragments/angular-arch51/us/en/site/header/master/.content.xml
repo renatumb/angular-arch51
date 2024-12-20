@@ -29,6 +29,7 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="angular-arch51/components/search"
                 searchRoot="/content/angular-arch51/us"/>
+            <logo/>
         </root>
     </jcr:content>
 </jcr:root>

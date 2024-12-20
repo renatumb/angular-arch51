@@ -2,8 +2,10 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Template">
     <jcr:content
-        jcr:primaryType="cq:PageContent"
+        cq:lastModified="{Date}2024-12-19T08:55:03.129-08:00"
+        cq:lastModifiedBy="admin"
         jcr:description="angular-arch51 Remote Next.js Page Template"
-        jcr:title="Remote Next.js Page"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Remote Next.js Page AA"
         status="enabled"/>
 </jcr:root>
